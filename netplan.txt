@@ -1,0 +1,14 @@
+cat /etc/netplan/01-network-manager-all.yaml 
+# Let NetworkManager manage all devices on this system
+network:
+  ethernets:
+          eth0:
+                  dhcp4: no
+                  dhcp6: no
+                  addresses: [172.30.178.205/20, ]
+                  gateway4: 172.30.176.1
+                  nameservers:
+                          addresses: [172.30.176.1, 8.8.8.8, ]
+  version: 2
+  renderer: NetworkManager
+
